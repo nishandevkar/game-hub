@@ -10,7 +10,7 @@ interface GameCardProps {
 const GameCard = ({ game }: GameCardProps) => {
 	return (
 		<div>
-			<Card borderRadius={10} overflow="hidden">
+			<Card borderRadius={10} overflow="hidden" width={"300px"}>
 				<CardBody>
 					<Heading fontSize="2xl">{game.name}</Heading>
 					<HStack justifyContent="space-between">
