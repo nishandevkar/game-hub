@@ -8,6 +8,7 @@ const GenreList = () => {
 	if (error) return null;
 	return (
 		<div>
+			{isLoading && <Spinner></Spinner>}
 			<List>
 				{data.map((eachGenre: Genre) => (
 					<ListItem paddingY={2}>
