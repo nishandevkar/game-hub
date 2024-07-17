@@ -20,10 +20,12 @@ interface FetchGamesResponse {
 	count: number;
 	results: Game[];
 }
+
 const useGames = () => {
     const [games, setGames] = useState<Game[]>([]);
 	const [error, setError] = useState("");
 	const [isLoading, setLoading]=useState(false);
+	
 	useEffect(() => {
         const controller = new AbortController();
 
@@ -38,6 +40,7 @@ const useGames = () => {
                 if (err instanceof CanceledError) return;
                 setError(err.message)
 			setLoading(false)});
+		
 
     return () => controller.abort();
 	}, []);
