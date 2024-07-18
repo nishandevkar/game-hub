@@ -5,7 +5,6 @@ import {
 	List,
 	ListItem,
 	Spinner,
-	Text,
 } from "@chakra-ui/react";
 import { Genre } from "../hooks/useGenres";
 import useGenres from "../hooks/useGenres";
