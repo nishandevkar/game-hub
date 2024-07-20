@@ -11,9 +11,9 @@ const GameCard = ({ game }: GameCardProps) => {
 	return (
 		<div>
 			<Card>
+				<Image src={getCroppedImageUrl(game.background_image)}></Image>
 				<CardBody>
-					<Heading fontSize="2xl">{game.name}</Heading>
-					<HStack justifyContent="space-between">
+					<HStack justifyContent="space-between" paddingBottom={3}>
 						<PlatformIconList
 							platforms={game.parent_platforms.map(
 								(eachPlatformObject) =>
@@ -24,8 +24,8 @@ const GameCard = ({ game }: GameCardProps) => {
 							score={game.metacritic}
 						></MetacriticScore>
 					</HStack>
+					<Heading fontSize="2xl">{game.name}</Heading>
 				</CardBody>
-				<Image src={getCroppedImageUrl(game.background_image)}></Image>
 			</Card>
 		</div>
 	);
