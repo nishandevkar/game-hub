@@ -3,6 +3,7 @@ import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import MetacriticScore from "./MetacriticScore";
 import getCroppedImageUrl from "../services/image-url";
+import EmojiMap from "./EmojiMap";
 
 interface GameCardProps {
 	game: Game;
@@ -24,7 +25,10 @@ const GameCard = ({ game }: GameCardProps) => {
 							score={game.metacritic}
 						></MetacriticScore>
 					</HStack>
-					<Heading fontSize="2xl">{game.name}</Heading>
+					<Heading fontSize="2xl">
+						{game.name}
+						<EmojiMap rating={game.rating_top}></EmojiMap>
+					</Heading>
 				</CardBody>
 			</Card>
 		</div>
