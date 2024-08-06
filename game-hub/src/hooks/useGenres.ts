@@ -18,8 +18,8 @@ const useGenres = () => {
 		staleTime: 24 * 60 * 60 * 1000,
 		initialData: {count: genres.length, results: genres},
 	})
-	return {data: genreResponse.data, isLoading: false, error: null}
+	return genreResponse
 }
-// const useGenres = () => ({data: genres, isLoading: false, error: null})
+
 
 export default useGenres
