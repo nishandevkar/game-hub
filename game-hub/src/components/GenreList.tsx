@@ -25,7 +25,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: GenreListProps) => {
 			</Heading>
 			{isLoading && <Spinner></Spinner>}
 			<List>
-				{data.map((eachGenre: Genre) => (
+				{data?.results.map((eachGenre: Genre) => (
 					<ListItem paddingY={2} key={eachGenre.id}>
 						<HStack>
 							<Image
