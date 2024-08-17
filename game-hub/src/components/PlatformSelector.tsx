@@ -1,23 +1,25 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import usePlatforms, { Platform } from "../hooks/usePlatforms";
+import usePlatform from "../hooks/usePlatform";
 
 interface PlatformSelectorProps {
-	selectedPlatform: number | undefined;
+	selectedPlatformId: number | undefined;
 	onSelectPlatform: (platformId: number) => void;
 }
 const PlatformSelector = ({
-	selectedPlatform,
+	selectedPlatformId,
 	onSelectPlatform,
 }: PlatformSelectorProps) => {
 	const { data, error } = usePlatforms();
+	const selectedPlatform = usePlatform(selectedPlatformId);
 	if (error) return null;
 	return (
 		<div>
 			<Menu>
 				<MenuButton as={Button} rightIcon={<BsChevronDown />}>
-					{/* {selectedPlatform?.name || "Platforms"} */}
-					{"Platforms"}
+					{selectedPlatform?.name || "Platforms"}
+					{/* {"Platforms"} */}
 				</MenuButton>
 				<MenuList>
 					{data?.results?.map((currentPlatform) => (
