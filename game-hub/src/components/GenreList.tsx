@@ -10,12 +10,11 @@ import {
 import { Genre } from "../hooks/useGenres";
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
+import useGameQueryStore from "../store";
 
-interface GenreListProps {
-	onSelectGenre: (genreId: number) => void;
-	selectedGenreId?: number;
-}
-const GenreList = ({ onSelectGenre, selectedGenreId }: GenreListProps) => {
+const GenreList = () => {
+	const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+	const setGenreId = useGameQueryStore((s) => s.setGenreId);
 	const { data, isLoading, error } = useGenres();
 	if (error) return null;
 	return (
@@ -45,9 +44,7 @@ const GenreList = ({ onSelectGenre, selectedGenreId }: GenreListProps) => {
 										? "bold"
 										: "normal"
 								}
-								onClick={() => {
-									onSelectGenre(eachGenre.id);
-								}}
+								onClick={() => setGenreId(eachGenre.id)}
 								variant="link"
 							>
 								{eachGenre.name}
