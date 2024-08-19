@@ -9,7 +9,7 @@ interface GameAttributeProps {
 }
 const GameAttribute = ({ attributeName, children }: GameAttributeProps) => {
 	return (
-		<Box padding={4}>
+		<Box marginY={8}>
 			<Heading as="dd" fontWeight={"bold"} color={"gray"} fontSize={"md"}>
 				{attributeName}
 			</Heading>
