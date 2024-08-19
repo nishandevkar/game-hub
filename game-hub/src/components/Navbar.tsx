@@ -1,8 +1,8 @@
 import { HStack, Image } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import logo from "../assets/GAMEHUB.png";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
-import { Link, Navigate, useRoutes } from "react-router-dom";
 
 const Navbar = () => {
 	return (

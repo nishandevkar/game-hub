@@ -1,6 +1,4 @@
-import { Box, Heading, List, ListItem, Text } from "@chakra-ui/react";
-import { Game } from "../entities/Game";
-import { Platform } from "../entities/Platform";
+import { Box, Heading } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface GameAttributeProps {

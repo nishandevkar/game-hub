@@ -6,7 +6,7 @@ interface ScreenshotsGridProps {
 }
 
 const ScreenshotsGrid = ({ id }: ScreenshotsGridProps) => {
-	const { data: screenshots, isLoading, error } = useScreenshot(id);
+	const { data: screenshots, isLoading } = useScreenshot(id);
 	if (isLoading) return <Spinner></Spinner>;
 	return (
 		<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
