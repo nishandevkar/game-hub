@@ -2,9 +2,9 @@ import { Heading, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import useGame from "../hooks/useGame";
 import ExpandableText from "./ExpandableText";
+import GameAttributesGrid from "./GameAttributesGrid";
 
 const GamesDetailsPage = () => {
-	// throw new Error("error error");
 	const { slug } = useParams();
 	const { data, isLoading, error } = useGame(slug!);
 
@@ -14,6 +14,7 @@ const GamesDetailsPage = () => {
 		<>
 			<Heading>{data.name}</Heading>
 			<ExpandableText>{data.description_raw}</ExpandableText>
+			<GameAttributesGrid game={data}></GameAttributesGrid>
 		</>
 	);
 };
