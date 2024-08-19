@@ -11,7 +11,7 @@ const ScreenshotsGrid = ({ id }: ScreenshotsGridProps) => {
 	return (
 		<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
 			{screenshots?.results.map((image) => (
-				<img src={image.image}></img>
+				<img key={image.id} src={image.image}></img>
 			))}
 		</SimpleGrid>
 	);
