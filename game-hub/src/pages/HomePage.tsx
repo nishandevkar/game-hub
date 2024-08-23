@@ -10,16 +10,16 @@ const HomePage = () => {
 		<div>
 			<Grid
 				templateAreas={{
-					base: ` "main"`,
+					base: `"main"`,
 					lg: ` "aside main"`,
 				}}
 				templateColumns={{
-					base: "1fr",
-					lg: "200px 1fr",
+					base: "100vw",
+					lg: "170px 1fr",
 				}}
 			>
-				<GridItem area="main">
-					<Box paddingX={5}>
+				<GridItem area="main" paddingX={8}>
+					<Box>
 						<GameHeading></GameHeading>
 						<HStack marginBottom={5}>
 							<PlatformSelector></PlatformSelector>

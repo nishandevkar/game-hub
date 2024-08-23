@@ -15,7 +15,7 @@ const GameGrid = () => {
 		data?.pages.reduce((total, page) => total + page.results.length, 0) ||
 		0;
 	return (
-		<Box padding={"20px"}>
+		<Box>
 			<InfiniteScroll
 				dataLength={fetchedGamesCount}
 				hasMore={!!hasNextPage}

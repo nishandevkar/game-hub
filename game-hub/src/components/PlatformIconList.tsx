@@ -16,19 +16,18 @@ import { IconType } from "react-icons";
 interface PlatformIconListProps {
 	platforms: Platform[];
 }
-
+export const iconMap: { [key: string]: IconType } = {
+	pc: FaWindows,
+	playstation: FaPlaystation,
+	nintendo: SiNintendo,
+	mac: FaApple,
+	linux: FaLinux,
+	android: FaAndroid,
+	ios: MdPhoneIphone,
+	web: BsGlobe,
+	xbox: FaXbox,
+};
 const PlatformIconList = ({ platforms }: PlatformIconListProps) => {
-	const iconMap: { [key: string]: IconType } = {
-		pc: FaWindows,
-		playstation: FaPlaystation,
-		nintendo: SiNintendo,
-		mac: FaApple,
-		linux: FaLinux,
-		android: FaAndroid,
-		ios: MdPhoneIphone,
-		web: BsGlobe,
-		xbox: FaXbox,
-	};
 	return (
 		<>
 			<HStack marginY={1}>

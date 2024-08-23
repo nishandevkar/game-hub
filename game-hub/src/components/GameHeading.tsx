@@ -13,7 +13,7 @@ const GameHeading = () => {
 	let headingText = `${platform?.name || ""} ${genre?.name || ""} Games`;
 	return (
 		<>
-			<Heading as="h1" marginY={7} fontSize="3xl">
+			<Heading as="h1" marginY={4} fontSize="3xl">
 				{headingText}
 			</Heading>
 		</>
